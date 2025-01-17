@@ -6,7 +6,7 @@ const App = () => {
 
     // return <Redirect href='/(stack)/home'/>
 
-    return <Redirect href='/tabs'/>
+    return <Redirect href='/drawer'/>
     // return (
     //     <SafeAreaView>
     //         <View className='mt-6'>
