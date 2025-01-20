@@ -19,6 +19,14 @@ const TabsLayout = () => {
                 shadowRadius: 4,
             },
             }}>
+
+          <Tabs.Screen
+            name="(stack)"
+                options={{
+                  title: 'Stack',
+                  tabBarIcon: ({ color }) => <Ionicons size={28} name="person-add-outline" color={color} />,
+                }}
+              />
         <Tabs.Screen
           name="home/index"
           options={{
@@ -31,13 +39,6 @@ const TabsLayout = () => {
           options={{
             title: 'Favoritos',
             tabBarIcon: ({ color }) => <Ionicons size={28} name="star-outline" color={color} />,
-          }}
-        />
-        <Tabs.Screen
-          name="(stack)"
-          options={{
-            title: 'Stack',
-            tabBarIcon: ({ color }) => <Ionicons size={28} name="person-add-outline" color={color} />,
           }}
         />
       </Tabs>

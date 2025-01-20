@@ -1,9 +1,17 @@
 import { View, Text, SafeAreaView } from 'react-native'
 import React from 'react'
-import { Link, router } from 'expo-router'
+import { Link, router, useNavigation } from 'expo-router'
 import CustomButton from '@/components/shared/CustomButton'
+import { DrawerActions } from '@react-navigation/native'
 
 const Home = () => {
+
+    const navigation = useNavigation()
+
+    const onToggleDrawer = () => {
+        navigation.dispatch( DrawerActions.openDrawer )
+    }
+
     return (
         <SafeAreaView>
             <View className='px-10 mt-5'>
@@ -11,7 +19,7 @@ const Home = () => {
                 <Link className='mb-5' href='/profile'>Perfil</Link>
                 <Link className='mb-5' href='/settings'>Ajustes</Link> */}
 
-                <Link href='/tabs/(stack)/products' asChild>
+                <Link href='/products' asChild>
                     <CustomButton 
                     children={'Productos'}
                     color='primary'
@@ -22,14 +30,14 @@ const Home = () => {
                 <CustomButton 
                 children={'Perfil'}
                 color='secondary'
-                onPress={() => router.push('/tabs/(stack)/profile')}
+                onPress={() => router.push('/profile')}
                 className='mb-5'
                 />
 
                 <CustomButton 
                 children={'Ajustes'}
                 color='tertiary'
-                onPress={() => router.push('/tabs/(stack)/settings')}
+                onPress={() => router.push('/settings')}
                 className='mb-5'
                 />
 
@@ -37,8 +45,13 @@ const Home = () => {
                 children={'Text only'}
                 color='tertiary'
                 variant='text-only'
-                onPress={() => router.push('/tabs/(stack)/settings')}
+                onPress={() => router.push('/settings')}
                 className='mb-5'
+                />
+
+                <CustomButton
+                children={'Abrir menu'}
+                onPress={onToggleDrawer}
                 />
             </View>
         </SafeAreaView>

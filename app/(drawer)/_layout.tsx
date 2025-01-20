@@ -11,13 +11,26 @@ const DrawerLayout = () => {
             overlayColor: 'rgba(0,0,0,0.5)',
             drawerActiveTintColor: 'indigo',
             headerShadowVisible: false,
+            // headerShown: false,
             sceneStyle: {
                 backgroundColor: 'white',
             }
         }}
         >
             <Drawer.Screen
-                name="user/index" // This is the name of the page and must match the url from root
+                name="(tabs)"
+                options={{
+                    headerShown: false,
+                    drawerLabel: 'Tabs + Stack',
+                    title: 'Tabs + STack',
+                    drawerIcon: ({ color, size }) => (
+                        <Ionicons name="albums-outline" size={size} color={color} />
+                    )
+                }}
+            />
+
+            <Drawer.Screen
+                name="user/index"
                 options={{
                     drawerLabel: 'User',
                     title: 'User SIUUUUUUU',
@@ -28,7 +41,7 @@ const DrawerLayout = () => {
 
             />
             <Drawer.Screen
-                name="schedule/index" // This is the name of the page and must match the url from root
+                name="schedule/index"
                 options={{
                     drawerLabel: 'Schedule',
                     title: 'Schedule SIUUUUUUU',
